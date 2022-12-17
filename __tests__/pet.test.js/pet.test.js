@@ -31,6 +31,14 @@ describe('growUp', () => {
         pet.growUp();
         expect(pet.age).toEqual(1);
     });
+
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+  
+        expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+      });
 });
 
 describe('gettingUnhealthier', () => {
@@ -55,9 +63,18 @@ describe('walk', () => {
 
         expect(pet.fitness).toEqual(10);
     });
+
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+  
+        expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+      });
 });
 
 describe('feed', () => {
+
     it('decreases hunger level to a minimum of 0', () => {
         const pet = new Pet('fido');
 
@@ -66,6 +83,14 @@ describe('feed', () => {
 
         expect(pet.hunger).toEqual(0);
     });
+
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+  
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+      });
 });
 
 describe('checkUp', () => {
@@ -109,18 +134,16 @@ describe('checkUp', () => {
 
     });
 
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+  
+        expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(');
+      });
+
 
 });
-
-//Your challenge in this step is to give the Pet function an isAlive property that really lets you know how the pet is feeling.
-
-//if the pet's fitness is 0 or less, it should return false.
-
-//if the pet's hunger is 10 or more, it should return false.
-
-//if the pet's age is 30 or more, it should return false.
-
-//otherwise it should return true.
 
 describe('isAlive', () => {
     it('returns if the pet is alive', () => {
