@@ -1,6 +1,8 @@
 
 const MAXIMUM_FITNESS = 10;
 const MINIMUM_HUNGER = 0;
+const MINIMUM_FEEDING = 5;
+const MINIMUM_WALK = 3;
 
 function Pet(name) {
     this.name = name;
@@ -29,7 +31,19 @@ Pet.prototype.feed = function() {
     } else {
         this.hunger = MINIMUM_HUNGER;
     }
-}
+};
+
+Pet.prototype.checkUp = function() {
+    if((this.hunger >= MINIMUM_FEEDING) && (this.fitness <= MINIMUM_WALK)) {
+        return 'I am hungry AND I need a walk';
+    } else if ((this.hunger < MINIMUM_FEEDING) && (this.fitness <= MINIMUM_WALK)) {
+        return 'I need a walk';
+    } else if ((this.hunger >= MINIMUM_FEEDING) && (this.fitness > MINIMUM_WALK)) {
+        return 'I am hungry';
+    } else {
+        return 'I feel great!';
+    }
+};
 
 
 module.exports = Pet;
