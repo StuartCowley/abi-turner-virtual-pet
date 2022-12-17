@@ -32,3 +32,16 @@ describe('growUp', () => {
         expect(pet.age).toEqual(1);
     });
 });
+
+describe('gettingUnhealthier', () => {
+    it('increases the hunger by 5 when age increases', () => {
+        const pet = new Pet('Fido');
+        pet.growUp();
+        expect(pet.hunger).toEqual(5);
+    });
+    it('decreases the fitness by 3 when age increases', () => {
+        const pet = new Pet('Fido');
+        pet.growUp();
+        expect(pet.fitness).toEqual(7);
+    });
+})
