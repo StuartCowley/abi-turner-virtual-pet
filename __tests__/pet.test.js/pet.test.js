@@ -111,3 +111,57 @@ describe('checkUp', () => {
 
 
 });
+
+//Your challenge in this step is to give the Pet function an isAlive property that really lets you know how the pet is feeling.
+
+//if the pet's fitness is 0 or less, it should return false.
+
+//if the pet's hunger is 10 or more, it should return false.
+
+//if the pet's age is 30 or more, it should return false.
+
+//otherwise it should return true.
+
+describe('isAlive', () => {
+    it('returns if the pet is alive', () => {
+        const pet = new Pet('fido');
+
+        pet.hunger = 7;
+        pet.fitness = 8;
+        pet.age = 20;
+
+        expect(pet.isAlive).toEqual(true);
+    });
+
+    it('returns if the pet is alive', () => {
+        const pet = new Pet('fido');
+
+        pet.hunger = 7;
+        pet.fitness = 8;
+        pet.age = 30;
+
+        expect(pet.isAlive).toEqual(false);
+    });
+
+    it('returns if the pet is alive', () => {
+        const pet = new Pet('fido');
+
+        pet.hunger = 7;
+        pet.fitness = 0;
+        pet.age = 20;
+
+        expect(pet.isAlive).toEqual(false);
+    });
+
+    it('returns if the pet is alive', () => {
+        const pet = new Pet('fido');
+
+        pet.hunger = 10;
+        pet.fitness = 8;
+        pet.age = 20;
+
+        expect(pet.isAlive).toEqual(false);
+    });
+
+    
+});
