@@ -188,3 +188,20 @@ describe('isAlive', () => {
 
     
 });
+
+describe('adoptChild', () => {
+    
+    it('returns the child onto the parent pet', () => {
+        const parent = new Pet('Dave');
+        const child = new Pet('Amelia');
+
+        expect(parent.adoptChild(child)).toEqual('You have adopted Amelia!');
+        
+
+
+    })
+    
+   
+
+    
+})

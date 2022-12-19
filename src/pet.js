@@ -61,5 +61,16 @@ Pet.prototype.checkUp = function() {
     }
 };
 
+Pet.prototype.adoptChild = function(child) {
+    this.children = [child];
+    return `You have adopted ${child.name}!`;
+
+};
+
+const parent = new Pet();
+const child = new Pet();
+
+
+
 
 module.exports = Pet;
