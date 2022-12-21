@@ -200,8 +200,22 @@ describe('adoptChild', () => {
 
 
     })
-    
-   
+      
+});
 
-    
+describe('haveBaby', () => {
+    it('adds a new child to the parent' , () => {
+        const parent = new Pet('Dave');
+        parent.haveBaby('Billy');
+        
+        expect(parent.children).toEqual(expect.arrayContaining([{"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Billy"}]));
+
+        parent.haveBaby('Bob');
+
+        expect(parent.children).toEqual(expect.arrayContaining([{"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Billy"}], [{"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Bob"}]));
+
+
+
+        
+    })
 })
